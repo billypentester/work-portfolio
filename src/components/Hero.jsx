@@ -35,6 +35,11 @@ const Hero = () => {
                 </div>
             </div>
             <div>
+                {/* <div class="avatar">
+                    <div class="w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src="https://avatars.githubusercontent.com/u/50988601?v=4" />
+                    </div>
+                </div> */}
                 <img src="https://avatars.githubusercontent.com/u/50988601?v=4" alt="hero-img" className='w-56 rounded-full'/>
             </div>
        </div>

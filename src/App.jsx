@@ -1,4 +1,5 @@
-import React from 'react'
+import SEO from './utils/SEO'
+
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+      <SEO />
       <div className="container px-16 mx-auto">
         <Navbar />
         <Hero />
