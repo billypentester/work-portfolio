@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import SEO from './utils/SEO'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -18,7 +17,6 @@ function App() {
 
   useEffect(() => {
     AOS.init();
-
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -30,7 +28,6 @@ function App() {
         loading ? ( <Loader /> ) : 
         (
           <>
-            <SEO />
             <div className="container px-16 mx-auto">
               <Navbar />
               <Hero />
