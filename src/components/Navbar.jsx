@@ -67,7 +67,7 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="navbar-end">
-            <a className="btn">
+            <a className="btn" href="/BilalAhmad.pdf" target="_blank" rel="noopener noreferrer">
                 <Icons type='file' paint="h-4 w-4  text-gray-800"/>
                 <span className="hidden md:block me-2">Resume</span>
             </a>
