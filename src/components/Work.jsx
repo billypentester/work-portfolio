@@ -1,7 +1,12 @@
 import {useState} from 'react'
 import TutorHub from './../assets/images/tutorhub.png'
 import DEX from './../assets/images/dex.png'
-
+import Car from './../assets/images/carpart.png'
+import Bus from './../assets/images/buslink.png'
+import covid from './../assets/images/covid.png'
+import weather from './../assets/images/weather.png'
+import wallet from './../assets/images/wallet.png'
+import personality from './../assets/images/personality.png'
 
 
 const workData = [
@@ -14,40 +19,33 @@ const workData = [
         image: DEX,
     },
     {
-        title: 'Project 3',
-        image: 'https://placehold.co/600x400',
+        title: 'Car Part Ecommerce',
+        image: Car,
     },
     {
-        title: 'Project 4',
-        image: 'https://placehold.co/600x400',
+        title: 'Bus Link',
+        image: Bus,
     },
     {
-        title: 'Project 5',
-        image: 'https://placehold.co/600x400',
+        title: 'Covid Tracker',
+        image: covid,
     },
     {
-        title: 'Project 6',
-        image: 'https://placehold.co/600x400',
+        title: 'Weather App',
+        image: weather,
     },
     {
-        title: 'Project 7',
-        image: 'https://placehold.co/600x400',
+        title: 'Wallet Authenticator',
+        image: wallet,
     },
     {
-        title: 'Project 8',
-        image: 'https://placehold.co/600x400',
+        title: 'Personality Prediction',
+        image: personality,
     }
 ]
 
 
 const Work = () => {
-
-    const [modalOpen, setModalOpen] = useState(false);
-    const [modalImage, setModalImage] = useState('');
-
-    const toggleModal = () => {
-        setModalOpen(!modalOpen);
-    };
 
     return (
         <section id="work" className="my-20 mx-10">
@@ -55,30 +53,18 @@ const Work = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10">
                 {
                     workData.map((work, index) => (
-                        <WorkCard key={index} title={work.title} image={work.image} toggleModal={toggleModal} />
+                        <WorkCard key={index} title={work.title} image={work.image} />
                     ))
                 }
             </div>
-            {
-                modalOpen && (
-                    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-80">
-                        <div className="modal-box p-4">
-                            <button className="btn btn-outline" onClick={toggleModal}>
-                            Close
-                            </button>
-                            <img src={modalImage} alt="Image" className="w-full h-full" />
-                        </div>
-                    </div>
-                )
-            }
         </section>
     )
 }
 
-const WorkCard = ({title, image, toggleModal}) => {
+const WorkCard = ({title, image}) => {
     return (
         <div className="">
-            <img src={image} alt="" className="rounded-2xl shadow-lg w-64 h-40" id="openModal" class="cursor-pointer" onClick={toggleModal} />
+            <img src={image} alt="" className="rounded-2xl shadow-lg " id="openModal" class="cursor-pointer" />
             <h1 className="text-lg font-medium m-3"> {title} </h1>
         </div>
     )

@@ -4,10 +4,9 @@ import config from "../settings/config"
 const SEO = () => {
   return (
     <Helmet>
-        <title>Portfolio</title>
         <meta charSet="utf-8" />
+        <title>{config.seo.title}</title>
         <meta name="language" content="English" />
-        <meta name="title" content={config.seo.title} />
         <meta name="description" content={config.seo.description} />
         <link rel="canonical" href={config.seo.siteUrl} />
         <meta name="robots" content={config.seo.robots} />
