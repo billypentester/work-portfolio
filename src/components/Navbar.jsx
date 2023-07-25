@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 import SweetScroll from 'sweet-scroll';
+import Icons from '../utils/Icons';
 
 const Navbar = () => {
 
@@ -19,11 +20,10 @@ const Navbar = () => {
             stopPropagation: true, // Prevents further propagation of the container element click event in the bubbling phase
             quickMode: false, // Instantly scroll to the destination! (It's recommended to use it with `easeOutExpo`)
         });
-    
-        // Clean up the SweetScroll instance when the component unmounts
+
         return () => {
             sweetScroll.destroy();
-        };
+        }
 
     }, [])
 
@@ -68,9 +68,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
             <a className="btn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="h-4 w-4 inline-block fill-current text-gray-800" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
-                    <path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"/>
-                </svg>
+                <Icons type='file' paint="h-4 w-4  text-gray-800"/>
                 <span className="hidden md:block me-2">Resume</span>
             </a>
         </div>

@@ -1,8 +1,9 @@
-import { Helmet } from "react-helmet"
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import config from "../settings/config"
 
 const SEO = () => {
   return (
+    <HelmetProvider>
     <Helmet>
         <meta charSet="utf-8" />
         <title>{config.seo.title}</title>
@@ -19,6 +20,7 @@ const SEO = () => {
         <meta property="og:image" content={config.seo.og.image} />
         <meta property="og:url" content={config.seo.og.url} />
     </Helmet>
+    </HelmetProvider>
   )
 }
 

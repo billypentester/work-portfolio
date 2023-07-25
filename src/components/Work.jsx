@@ -3,10 +3,10 @@ import TutorHub from './../assets/images/tutorhub.png'
 import DEX from './../assets/images/dex.png'
 import Car from './../assets/images/carpart.png'
 import Bus from './../assets/images/buslink.png'
-import covid from './../assets/images/covid.png'
-import weather from './../assets/images/weather.png'
-import wallet from './../assets/images/wallet.png'
-import personality from './../assets/images/personality.png'
+import Covid from './../assets/images/covid.png'
+import Weather from './../assets/images/weather.png'
+import Wallet from './../assets/images/wallet.png'
+import Personality from './../assets/images/personality.png'
 
 const workData = [
     {
@@ -27,19 +27,19 @@ const workData = [
     },
     {
         title: 'Covid Tracker',
-        image: covid,
+        image: Covid,
     },
     {
         title: 'Weather App',
-        image: weather,
+        image: Weather,
     },
     {
         title: 'Wallet Authenticator',
-        image: wallet,
+        image: Wallet,
     },
     {
         title: 'Personality Prediction',
-        image: personality,
+        image: Personality,
     }
 ]
 
@@ -63,7 +63,7 @@ const Work = () => {
 const WorkCard = ({title, image}) => {
     return (
         <div className="">
-            <img src={image} alt="" className="rounded-2xl shadow-lg " id="openModal" class="cursor-pointer" />
+            <img src={image} alt="" className="rounded-lg shadow-xl cursor-pointer" id="openModal" />
             <h1 className="text-lg font-medium m-3"> {title} </h1>
         </div>
     )
