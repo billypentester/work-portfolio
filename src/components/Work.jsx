@@ -8,7 +8,6 @@ import weather from './../assets/images/weather.png'
 import wallet from './../assets/images/wallet.png'
 import personality from './../assets/images/personality.png'
 
-
 const workData = [
     {
         title: 'TutorHub',
