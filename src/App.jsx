@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Work from './components/Work'
+import Expertise from './components/Expertise'
+import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -33,6 +35,8 @@ function App() {
               <Hero />
               <Services />
               <Work />
+              <Expertise />
+              <Education />
               <Contact />
             </div>
             <Footer />

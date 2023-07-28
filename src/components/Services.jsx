@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react'
 import Icons from '../utils/Icons'
 
 const Services = () => {

@@ -63,7 +63,7 @@ const Work = () => {
 const WorkCard = ({title, image}) => {
     return (
         <div data-aos="zoom-in" className="">
-            <img src={image} alt="" className="rounded-lg shadow-xl cursor-pointer" id="openModal" />
+            <img src={image} alt="" className="rounded-lg shadow-xl cursor-pointer" />
             <h1 className="text-lg font-medium m-3"> {title} </h1>
         </div>
     )

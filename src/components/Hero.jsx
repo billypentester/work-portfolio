@@ -35,7 +35,7 @@ const Hero = () => {
                 </div>
             </div>
             <div>
-                <img src="https://avatars.githubusercontent.com/u/50988601?v=4" alt="hero-img" className='w-56 rounded-full'/>
+                <img src="https://avatars.githubusercontent.com/u/50988601?v=4" alt="hero-img" className='w-56 rounded-full shadow-md'/>
             </div>
        </div>
     </section>
