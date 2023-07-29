@@ -17,11 +17,11 @@ const Contact = () => {
   }
 
   return (
-    <section data-aos="zoom-in-down" id="contact" className="my-20 bg-gradient-to-b from-blue-200 to-blue-100 shadow-xl rounded-2xl">
+    <section data-aos="zoom-in-down" id="contact" className="my-20 bg-gradient-to-b from-blue-200 to-blue-100 shadow-xl rounded-none lg:rounded-2xl">
         <div className='p-10'>
-          <h1 className='text-5xl tracking-tight text-gray-800 leading-tight font-semibold my-5'> Get in touch </h1>
-          <div className="flex flex-1 gap-10">
-            <div className="w-2/5">
+          <h1 className='text-4xl sm:text-5xl tracking-tight text-gray-800 leading-tight font-semibold my-5'> Get in touch </h1>
+          <div className="flex flex-1 flex-col md:flex-row gap-10">
+            <div className="w-full md:w-2/5">
                 <p className='text-lg font-medium mb-5'> 
                   Let's have a chat and I'll help your next idea comes to the real world. 
                 </p>
@@ -46,7 +46,7 @@ const Contact = () => {
                   </button>
                 </div>
             </div>
-            <div className="w-3/5">
+            <div className="w-full md:w-3/5">
               <form onSubmit={submit}>
                 <div className="flex flex-col space-y-5">
                   <div className="flex space-x-5">

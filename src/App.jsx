@@ -30,7 +30,7 @@ function App() {
         loading ? ( <Loader /> ) : 
         (
           <>
-            <div className="container px-16 mx-auto">
+            <div className="container-fluid lg:container px-0 xl:px-16 mx-auto ">
               <Navbar />
               <Hero />
               <Services />
