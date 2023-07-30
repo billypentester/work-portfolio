@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import Icons from '../utils/Icons'
 import { useForm } from '@formcarry/react';
 
@@ -8,13 +7,27 @@ const Contact = () => {
  
   if (state.submitted) {
     window.my_modal_2.showModal()
-    // clear the form
     setTimeout(() => {
       document.getElementById('name').value = ''
       document.getElementById('email').value = ''
       document.getElementById('message').value = ''
     }, 1000)
   }
+
+  const urls = [
+    {
+        name: 'email',
+        url: 'mailto:mailto:bilalsheikh2500@gmail.com'
+    },
+    {
+        name: 'whatsapp',
+        url: 'https://wa.me/923324187624?text=Hi%20Bilal%2C%20I%20want%20to%20hire%20you%20for%20my%20project'
+    },
+    {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/billypentester/'
+    }
+  ]
 
   return (
     <section data-aos="zoom-in-down" id="contact" className="my-20 bg-gradient-to-b from-blue-200 to-blue-100 shadow-xl rounded-none lg:rounded-2xl">
@@ -29,27 +42,21 @@ const Contact = () => {
                   Simple friendly talk in never a bad idea :)
                 </p>
                 <div className="flex items-center space-x-5 my-8">
-                  <button className='bg-gray-100 hover:bg-blue-700 p-3 rounded-full'>
-                      <a href="https://fiverr.com/billypentester" target="_blank">
-                          <Icons type='email' paint="h-6 w-6 text-blue-500 hover:text-gray-100"/>
-                      </a>
-                  </button>
-                  <button className='bg-gray-100 hover:bg-blue-700 p-3 rounded-full'>
-                      <a href="https://wa.me/923324187624?text=Hi%20Bilal%2C%20I%20want%20to%20hire%20you%20for%20my%20project" target="_blank">
-                          <Icons type='whatsapp' paint="h-6 w-6 text-blue-500 hover:text-gray-100"/>
-                      </a>
-                  </button>
-                  <button className='bg-gray-100 hover:bg-blue-700 p-3 rounded-full'>
-                      <a href="https://www.linkedin.com/in/billypentester/" target="_blank">
-                          <Icons type='linkedin' paint="h-6 w-6 text-blue-500 hover:text-gray-100"/>
-                      </a>
-                  </button>
+                  {
+                      urls.map((url) => (
+                          <button key={url.name} className='bg-gray-100 hover:bg-blue-500 text-blue-500 hover:text-gray-100 p-3 rounded-full shadow-md shadow-blue-300 transition duration-500 ease-in-out'>
+                              <a href={url.url} target="_blank">
+                                  <Icons type={url.name} paint="h-6 w-6"/>
+                              </a>
+                          </button>
+                      ))
+                  }
                 </div>
             </div>
             <div className="w-full md:w-3/5">
               <form onSubmit={submit}>
                 <div className="flex flex-col space-y-5">
-                  <div className="flex space-x-5">
+                  <div className="flex sm:space-x-5 space-y-5 sm:space-y-0 flex-col sm:flex-row">
                     <input id="name" type="text" name="name" placeholder="Name*" className="input w-full rounded-full shadow-lg" />
                     <input id="email" type="email" name="Email" placeholder="Email*" className="input w-full rounded-full shadow-lg" />
                   </div>

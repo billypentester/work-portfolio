@@ -1,12 +1,11 @@
-import {useState} from 'react'
-import TutorHub from './../assets/images/tutorhub.png'
-import DEX from './../assets/images/dex.png'
-import Car from './../assets/images/carpart.png'
-import Bus from './../assets/images/buslink.png'
-import Covid from './../assets/images/covid.png'
-import Weather from './../assets/images/weather.png'
-import Wallet from './../assets/images/wallet.png'
-import Personality from './../assets/images/personality.png'
+import TutorHub from './../assets/images/projects/tutorhub.png'
+import DEX from './../assets/images/projects/dex.png'
+import Car from './../assets/images/projects/carpart.png'
+import Bus from './../assets/images/projects/buslink.png'
+import Covid from './../assets/images/projects/covid.png'
+import Weather from './../assets/images/projects/weather.png'
+import Wallet from './../assets/images/projects/wallet.png'
+import Personality from './../assets/images/projects/personality.png'
 
 const workData = [
     {
@@ -63,7 +62,7 @@ const Work = () => {
 const WorkCard = ({title, image}) => {
     return (
         <div data-aos="zoom-in" className="">
-            <img src={image} alt="" className="rounded-lg shadow-xl cursor-pointer" />
+            <img src={image} alt={title} className="rounded-lg shadow-xl cursor-pointer" />
             <h1 className="text-lg font-medium m-3"> {title} </h1>
         </div>
     )
