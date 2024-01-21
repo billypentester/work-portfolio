@@ -1,37 +1,44 @@
+import ColorSection from './../layouts/ColorSection'
 import Icons from '../utils/Icons'
 
 const Services = () => {
 
-  return (
-    <section data-aos="fade-down" id="services" className="my-20 bg-gradient-to-b from-blue-200 to-blue-100 shadow-xl rounded-none lg:rounded-2xl">
-        <div className='p-10'>
-            <h1 className='text-4xl sm:text-5xl tracking-tight text-gray-800 leading-tight font-semibold my-3'> Services I Offer </h1>
+    const services = [
+        {
+            title: 'Full Stack Development',
+            description: 'I design and build beautiful websites using ReactJS, NextJS, TailwindCSS, and other modern technologies.',
+            icon: 'web'
+        },
+        {
+            title: 'Database Development',
+            description: 'I develop and maintain databases using MongoDB, MySQL, and other modern technologies.',
+            icon: 'database'
+        },
+        {
+            title: 'Blockchain Development',
+            description: 'I develop and maintain blockchain applications using Ethereum, Solidity, and other modern technologies.',
+            icon: 'blockchain'
+        }
+    ]
+
+    return (
+        <ColorSection id="services" title="Services I Offer">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
-                <div className="">
-                    <div className="bg-white p-3 inline-block rounded-full shadow-sm shadow-blue-500 mb-2">
-                        <Icons type='web' paint='h-6 w-6 text-blue-500' />
-                    </div>
-                    <h1 className='text-2xl font-medium my-5'> Full Stack Development </h1>
-                    <p className='text-lg font-medium'> I design and build beautiful websites using ReactJS, NextJS, TailwindCSS, and other modern technologies. </p>
-                </div>
-                <div className="">
-                    <div className="bg-white p-3 inline-block rounded-full shadow-sm shadow-blue-500 mb-2">
-                        <Icons type='database' paint='h-6 w-6 text-blue-500' />
-                    </div>
-                    <h1 className='text-2xl font-medium my-5'> Database Development </h1>
-                    <p className='text-lg font-medium'> I develop and maintain databases using MongoDB, MySQL, and other modern technologies. </p>
-                </div>
-                <div className="">
-                    <div className="bg-white p-3 inline-block rounded-full shadow-sm shadow-blue-500 mb-2">
-                        <Icons type='blockchain' paint='h-6 w-6 text-blue-500' />
-                    </div>
-                    <h1 className='text-2xl font-medium my-5'> Blockchain Development </h1>
-                    <p className='text-lg font-medium'> I develop and maintain blockchain applications using Ethereum, Solidity, and other modern technologies. </p>
-                </div>
+                {
+                    services.map((service, index) => (
+                        <div key={index} className="">
+                            <div className="bg-neutral p-3 inline-block rounded-full shadow-sm shadow-secondary mb-2">
+                                <Icons type={service.icon} paint='h-6 w-6 text-secondary' />
+                            </div>
+                            <h1 className='text-2xl font-medium my-5'> {service.title} </h1>
+                            <p className='text-lg font-medium'> {service.description} </p>
+                        </div>
+                    ))
+                }
             </div>
-        </div>
-    </section>
-  )
+        </ColorSection>
+    )
+
 }
 
 export default Services

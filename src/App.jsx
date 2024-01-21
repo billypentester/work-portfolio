@@ -1,11 +1,15 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import themeChanger from './utils/themeChanger'
 
+import GoTop from './components/GoTop'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Work from './components/Work'
+import Experience from './components/Experience'
+import Publications from './components/publications'
 import Expertise from './components/Expertise'
 import Education from './components/Education'
 import Contact from './components/Contact'
@@ -15,35 +19,56 @@ import Loader from './utils/Loader'
 
 function App() {
 
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const themeParam = urlParams.get('theme');
+
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+      mirror: false
+    });
+  }, []);
+
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
 
+  useEffect(() => {
+    themeParam ? setTheme(themeParam) : setTheme('light');
+    themeChanger(theme);
+  }, [theme]);
+
   return (
-    <>
+    <React.Fragment>
       {
-        loading ? ( <Loader /> ) : 
-        (
-          <>
-            <div className="container-fluid lg:container px-0 xl:px-16 mx-auto ">
+        loading ? 
+          <Loader /> 
+        : 
+          <React.Fragment>
+            <section className="container-fluid lg:container px-0 xl:px-16 mx-auto">
               <Navbar />
               <Hero />
               <Services />
               <Work />
+              <Experience />
+              <Publications />
               <Expertise />
               <Education />
               <Contact />
-            </div>
+              <GoTop />
+            </section>
             <Footer />
-          </>
-        )
+          </React.Fragment>
       }
-    </>
+    </React.Fragment>
   )
 }
 

@@ -5,6 +5,7 @@ const Experience = () => {
 
     const experience = [
         {
+            id: 'e1',
             title: 'Software Engineer',
             company: 'Simplex Technology Solutions',
             location: 'Lahore',
@@ -12,6 +13,7 @@ const Experience = () => {
             logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHpuMrOiTl1a6yIZ2C7TrhXm4TLykws22Vw&usqp=CAU'
         },
         {
+            id: 'e2',
             title: 'MERN Developer',
             company: 'Fiverr',
             location: 'Remote',
@@ -21,21 +23,19 @@ const Experience = () => {
     ]
 
     return (
-        <ColorSection id={'experience'} title={'My Experience'}>
-            <div className="grid grid-cols-1 gap-2 my-10">
+        <ColorSection id='experience' title='My Experience'>
+            <div key="woo" className="grid grid-cols-1 gap-2 my-10">
                 {
                     experience.map((item, index) => (
-                        <>
-                            <div key={index} className="flex flex-1 flex-col sm:flex-row justify-between my-1">
+                        <React.Fragment key={item.id}>
+                            <div className="flex flex-1 flex-col sm:flex-row justify-between my-1">
                                 <div className="me-5">
-                                    <div className='flex flex-wrap flex-1 justify-end'>
-                                        <img src={item.logo} alt="logo" className="w-16 rounded-full" />
-                                    </div>
+                                    <img src={item.logo} alt={item.title} className="w-16 rounded-full" />
                                 </div>
                                 <div className="w-full">
                                     <div className="flex justify-between">
                                         <h1 className='text-2xl font-semibold'> {item.title} </h1>
-                                        <h1 className='text-xl font-medium'> {item.duration} </h1>
+                                        <h1 className='text-xl font-medium hidden sm:block'> {item.duration} </h1>
                                     </div>
                                     <h1 className='text-xl font-medium'> {item.company} </h1>
                                     <h1 className='text-lg'> {item.location} </h1>
@@ -44,7 +44,7 @@ const Experience = () => {
                             {
                                 index !== experience.length - 1 && <div className="divider"></div>
                             }
-                        </>
+                        </React.Fragment>
                     ))
                 }
             </div>

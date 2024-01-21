@@ -28,7 +28,7 @@ const Navbar = () => {
     }, [])
 
   return (
-    <div className="navbar bg-base-100">
+    <nav className="navbar bg-base-100">
         <div className="navbar-start">
             <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,6 +47,12 @@ const Navbar = () => {
                         <a href='#work'>Work</a>
                     </li>
                     <li>
+                        <a href='#experience'>Experience</a>
+                    </li>
+                    <li>
+                        <a href='#publications'>Publications</a>
+                    </li>
+                    <li>
                         <a href='#expertise'>Expertise</a>
                     </li>
                     <li>
@@ -57,7 +63,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">billypentester</a>
+            <a className="btn btn-ghost text-secondary normal-case text-xl">billypentester</a>
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -71,6 +77,12 @@ const Navbar = () => {
                     <a href='#work'>Work</a>
                 </li>
                 <li>
+                    <a href='#experience'>Experience</a>
+                </li>
+                <li>
+                    <a href='#publications'>Publications</a>
+                </li>
+                <li>
                     <a href='#expertise'>Expertise</a>
                 </li>
                 <li>
@@ -82,12 +94,12 @@ const Navbar = () => {
             </ul>
         </div>
         <div className="navbar-end">
-            <a className="btn" href="/BilalAhmad.pdf" target="_blank" rel="noopener noreferrer">
-                <Icons type='file' paint="h-4 w-4  text-gray-800"/>
-                <span className="hidden md:block me-2">Resume</span>
+            <a className="btn btn-secondary" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Icons type='file' paint="h-4 w-4  text-base-100"/>
+                <span className="hidden md:block me-2 text-base-100">Resume</span>
             </a>
         </div>
-    </div>
+    </nav>
   )
 }
 
