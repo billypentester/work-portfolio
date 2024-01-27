@@ -16,6 +16,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 import Loader from './utils/Loader'
+import Skeleton from './utils/Skeleton'
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {

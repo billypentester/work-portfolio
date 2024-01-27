@@ -5,7 +5,7 @@ import { edu, cert } from '../data/config'
 const WorkCard = ({title, image}) => {
   return (
       <div>
-          <img src={image} alt={title} className="rounded-lg shadow-xl cursor-pointer h-60 object-cover" />
+          <img src={image} alt={title} className="rounded-lg shadow-xl cursor-pointer h-60 object-cover" loading="lazy" />
           <h1 className="text-lg font-medium m-3"> {title} </h1>
       </div>
   )
@@ -22,7 +22,7 @@ const Education = () => {
               <div key={item.id} className="bg-gray-100 shadow-lg rounded-lg px-10 py-10">
                 <div className="flex flex-col sm:flex-row">
                   <div className="w-full sm:w-1/3 mb-4 sm:mb-0">
-                    <img src={item.image} className='mx-auto h-24' alt={item.title} />
+                    <img src={item.image} className='mx-auto h-24' alt={item.title} loading="lazy" />
                   </div>
                   <div className="w-full sm:w-2/3">
                     <h3 className="text-lg sm:text-2xl font-semibold text-gray-800">{item.university}</h3>

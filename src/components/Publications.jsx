@@ -6,13 +6,13 @@ const Publications = () => {
 
   return (
     <TransSection id={'publications'} title={'Publications'}>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-10">
         {
           publications.map((item, index) => {
             return(
               <a key={index} className="card bg-base-100 shadow-xl" href={item.link} target='_blank'>
                 <figure>
-                  <img src={item.image} alt={item.title} />
+                  <img src={item.image} alt={item.title} loading="lazy" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title"> {item.title} </h2>

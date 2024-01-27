@@ -4,7 +4,7 @@ import { work } from '../data/config'
 const WorkCard = ({title, image}) => {
     return (
         <div>
-            <img src={image} alt={title} className="rounded-lg shadow-xl cursor-pointer" />
+            <img src={image} alt={title} className="rounded-lg shadow-xl cursor-pointer" loading="lazy"/>
             <h2 className="text-lg font-medium m-3"> {title} </h2>
         </div>
     )

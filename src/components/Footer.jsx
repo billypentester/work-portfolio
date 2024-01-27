@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
         <div className='py-5 bg-neutral text-center shadow-inner'>
             <span className='text-lg text-primary font-medium'> 
-              <a href="https://billypentester.github.io/" target='_blank' className='link-secondary'>billypentester </a>
+              <a href="https://www.linkedin.com/in/billypentester" target='_blank' className='link-secondary'>billypentester </a>
               &copy;   
               {' ' + new Date().getFullYear()}
             </span>

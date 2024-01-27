@@ -16,6 +16,10 @@ const Contact = () => {
     }, 1000)
   }
 
+  const capitalized = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   return (
     <ColorSection id="contact" title="Get in touch">
       <div className="flex flex-1 flex-col md:flex-row gap-10 my-10">
@@ -29,7 +33,7 @@ const Contact = () => {
             <div className="flex items-center space-x-5 my-8">
               {
                   urls.map((url) => (
-                      <button key={url.name} className='bg-neutral hover:bg-secondary text-secondary hover:text-neutral p-3 rounded-full shadow-md shadow-secondary transition duration-500 ease-in-out'>
+                      <button name={capitalized(url.name)} data-tip={capitalized(url.name)} key={url.name} className='tooltip tooltip-bottom bg-neutral hover:bg-secondary text-secondary hover:text-neutral p-3 rounded-full shadow-md shadow-secondary transition duration-500 ease-in-out'>
                           <a href={url.url} target="_blank">
                               <Icons type={url.name} paint="h-6 w-6"/>
                           </a>
@@ -46,8 +50,8 @@ const Contact = () => {
                 <input id="email" type="email" name="Email" placeholder="Email*" className="input w-full rounded-lg shadow-lg" />
               </div>
               <textarea id="message" name="Message" className="textarea w-full rounded-lg shadow-lg resize-none" placeholder="Message*" rows="5"></textarea>
-              <button type="submit" className="btn btn-wide btn-secondary ms-auto">
-                  <span className="material-icons-outlined text-white">send message</span>
+              <button type="submit" className="btn btn-block lg:btn-wide btn-secondary ms-auto">
+                  <span className="material-icons-outlined text-white capitalize">send message</span>
               </button>
             </div>
           </form>
