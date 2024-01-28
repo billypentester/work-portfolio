@@ -16,7 +16,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 import Loader from './utils/Loader'
-import Skeleton from './utils/Skeleton'
+import ArticleStructuredData from './utils/structuredData'
 
 function App() {
 
@@ -26,6 +26,12 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    if (window.location.pathname !== '/') {
+      window.location.replace('/');
+    }
+  }, []);
 
   useEffect(() => {
     AOS.init({
@@ -55,6 +61,7 @@ function App() {
         : 
           <React.Fragment>
             <section className="container-fluid lg:container px-0 xl:px-16 mx-auto">
+              <ArticleStructuredData />
               <Navbar />
               <Hero />
               <Services />
