@@ -61,13 +61,13 @@ function App() {
         : 
           <React.Fragment>
             <section className="container-fluid lg:container px-0 xl:px-16 mx-auto">
-              <ArticleStructuredData />
               <Navbar />
               <Hero />
               <Services />
               <Work />
               <Experience />
               <Publications />
+              <ArticleStructuredData />
               <Expertise />
               <Education />
               <Contact />
