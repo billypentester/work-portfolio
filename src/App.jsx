@@ -55,13 +55,13 @@ function App() {
 
   return (
     <React.Fragment>
-      <ArticleStructuredData />
       {
         loading ? 
           <Loader /> 
         : 
           <React.Fragment>
             <section className="container-fluid lg:container px-0 xl:px-16 mx-auto">
+              <ArticleStructuredData />
               <Navbar />
               <Hero />
               <Services />
